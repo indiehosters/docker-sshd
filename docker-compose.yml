@@ -1,7 +1,0 @@
-ssh:
-  image: indiehosters/sshd
-  volumes:
-    - ./data:/data/
-    - ./authorized_keys:/root/.ssh/authorized_keys:ro
-  ports:
-    - "2222:22"
