@@ -1,11 +1,2 @@
-FROM debian:jessie
-
-RUN apt-get update && apt-get install -y \
-      openssh-server \
-      rsync \
- && mkdir /var/run/sshd \
- && rm -rf /var/lib/apt/lists/*
-
-EXPOSE 22
-
-CMD    ["/usr/sbin/sshd", "-D"]
+FROM macropin/sshd
+RUN adduser -D -u 1000 backup
